@@ -13,6 +13,6 @@ mod tests {
 
     #[test]
     fn returns_twice_of_positive_numbers() {
-        assert_eq!(4, 4);
+        assert_eq!(4, times_two(2));
     }
 }
