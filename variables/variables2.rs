@@ -1,7 +1,8 @@
 // Make me compile! Scroll down for hints :)
 
 fn main() {
-    let x;
+    let x:u8 = 10;
+
     if x == 10 {
         println!("Ten!");
     } else {
