@@ -15,7 +15,6 @@ fn express(sentiment: Reaction) {
 fn main () {
     let x = Reaction::Happy("It's a great day for Rust!");
     express(x);
-    express(x);
     let y = Reaction::Sad("This code doesn't compile yet.");
     express(y);
 }
