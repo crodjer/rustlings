@@ -3,19 +3,25 @@
 // we can't call the `try!` macro in the `main()` function! Why not?
 // What should we do instead? Scroll for hints!
 
+use std::error::Error;
 use std::num::ParseIntError;
 
 fn main() {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
-    let cost = try!(total_cost(pretend_user_input));
-
-    if cost > tokens {
-        println!("You can't afford that many!");
-    } else {
-        tokens -= cost;
-        println!("You now have {} tokens.", tokens);
+    match total_cost(pretend_user_input) {
+        Ok(cost) => {
+            if cost > tokens {
+                println!("You can't afford that many!");
+            } else {
+                tokens -= cost;
+                println!("You now have {} tokens.", tokens);
+            }
+        },
+        Err(e) => {
+            println!("Error: {}", e.description());
+        }
     }
 }
 

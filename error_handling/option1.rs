@@ -9,8 +9,11 @@ fn main() {
     let last = list.pop().unwrap();
     println!("The last item in the list is {:?}", last);
 
-    let second_to_last = list.pop().unwrap();
-    println!("The second-to-last item in the list is {:?}", second_to_last);
+    if let Some(second_to_last) = list.pop() {
+        println!("The second-to-last item in the list is {:?}", second_to_last);
+    } else {
+        println!("Empty list!");
+    };
 }
 
 
